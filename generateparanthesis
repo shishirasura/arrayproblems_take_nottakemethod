@@ -1,0 +1,23 @@
+class solution:
+    def generate(self,curr_str,ans,opn,close,n):
+        if(opn==close and opn+close==2*n):
+            ans.append(curr_str)
+            return
+        if(opn>n):
+            return
+        if(close>opn):
+            return
+        self.generate(curr_str+"(",ans,opn+1,close,n)
+        self.generate(curr_str+")",ans,opn,close+1,n)
+    def generateparanthesis(self,n):
+        curr_str=""
+        ans=[]
+        close=0
+        opn=0
+        self.generate(curr_str,ans,opn,close,n)
+        return ans
+obj=solution()
+n=3
+print(obj.generateparanthesis(n))
+*****output:
+['((()))', '(()())', '(())()', '()(())', '()()()']
