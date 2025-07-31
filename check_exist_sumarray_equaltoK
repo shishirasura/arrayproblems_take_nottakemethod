@@ -1,0 +1,16 @@
+class solution():
+    def check(self,ind,arr,k):
+        if(k==0):
+            return True
+        if(k<0 or ind==len(arr)):
+            return False
+        pth1=self.check(ind+1,arr,k-arr[ind])
+        if(path1==True):
+            return True
+        path2=self.check(ind+!,arr,k)
+        return path1 or path2
+    def checksubsequencesum(self,N,arr,k):
+        ind=o
+        return self.check(ind,arr,k)
+    
+
